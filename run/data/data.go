@@ -362,6 +362,25 @@ func (c Columns) ByOrdinal() Columns {
 	return cc
 }
 
+var excepts map[string]int = map[string]int{
+	"id":         0,
+	"created_at": 0,
+	"updated_at": 0,
+	"enabled":    0,
+	"deleted":    0,
+}
+
+// UpdateNames returns the orderd list of updatable column DBNames in this table
+func (c Columns) InputColumns() Columns {
+	names := make(Columns, 0)
+	for _, x := range c {
+		if _, exist := excepts[x.DBName]; !exist {
+			names = append(names, x)
+		}
+	}
+	return names
+}
+
 // Tables is a list of tables in this schema.
 type Tables []*Table
 
