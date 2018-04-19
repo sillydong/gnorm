@@ -484,7 +484,9 @@ func queryIndexes(log *log.Logger, db *sql.DB, schemaNames []string) ([]indexRes
 
 		// postgres prepends schema onto table name if outside of public schema
 		if r.SchemaName != "public" {
-			r.TableName = r.TableName[len(r.SchemaName)+1:]
+			if strings.Contains(r.TableName, r.SchemaName) {
+				r.TableName = r.TableName[len(r.SchemaName)+1:]
+			}
 		}
 
 		results = append(results, r)
@@ -537,7 +539,7 @@ func queryColumnComments(log *log.Logger, db *sql.DB, schemaNames []string) ([]c
 		}
 
 		if c.Valid {
-			replaced := strings.Replace(c.String,"\n"," ",-1)
+			replaced := strings.Replace(c.String, "\n", " ", -1)
 			r.Comment = replaced
 			results = append(results, r)
 		}
@@ -588,7 +590,7 @@ func queryTableComments(log *log.Logger, db *sql.DB, schemaNames []string) ([]ta
 		}
 
 		if c.Valid {
-			replaced := strings.Replace(c.String,"\n"," ",-1)
+			replaced := strings.Replace(c.String, "\n", " ", -1)
 			r.Comment = replaced
 			results = append(results, r)
 		}
