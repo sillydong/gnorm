@@ -19,6 +19,7 @@ import (
 // methods here, please keep them alphabetical.
 var FuncMap = map[string]interface{}{
 	"camel":        kace.Camel,
+	"camelLow":     camelLow,
 	"compare":      strings.Compare,
 	"contains":     strings.Contains,
 	"containsAny":  strings.ContainsAny,
@@ -242,4 +243,8 @@ func execJSON(runner cmdRunner, name string, data []byte, args ...string) (map[s
 		return nil, err
 	}
 	return o, nil
+}
+
+func camelLow(src string) string {
+	return strings.Replace(kace.Camel(src), "ID", "Id", -1)
 }
