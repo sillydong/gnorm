@@ -511,7 +511,9 @@ func queryColumnComments(log *log.Logger, db *sql.DB, schemaNames []string) ([]c
 			(
 					SELECT pg_catalog.col_description(c.oid, cols.ordinal_position::int)
 					FROM pg_catalog.pg_class c
-					WHERE c.relname = cols.table_name
+					WHERE c.relname = cols.table_name AND c.relnamespace = (
+						select oid from pg_namespace where nspname = cols.table_schema
+					)
 			) AS column_comment
 	FROM information_schema.columns cols
 	WHERE cols.table_schema IN (%s)`
