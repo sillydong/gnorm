@@ -111,7 +111,7 @@ func Query(db gnorm.DB, where gnorm.WhereClause) ([]*Row, error) {
 		FROM information_schema.columns WHERE (`
 
 	idx := 1
-	sqlstr := origsqlstr + where.String(&idx) + ") "
+	sqlstr := origsqlstr + where.String(&idx) + ") ORDER BY table_name, ordinal_position"
 
 	var vals []*Row
 	q, err := db.Query(sqlstr, where.Values()...)
