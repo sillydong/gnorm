@@ -5,8 +5,8 @@ import (
 	"log"
 
 	"github.com/pkg/errors"
-	"gnorm.org/gnorm/database"
-	"gnorm.org/gnorm/run/data"
+	"github.com/sillydong/gnorm/database"
+	"github.com/sillydong/gnorm/run/data"
 )
 
 type nameConverter func(s string) (string, error)

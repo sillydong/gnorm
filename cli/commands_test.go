@@ -11,7 +11,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	"gnorm.org/gnorm/environ"
+	"github.com/sillydong/gnorm/environ"
 )
 
 func makeEnv() (stderr, stdout *bytes.Buffer, env environ.Values) {

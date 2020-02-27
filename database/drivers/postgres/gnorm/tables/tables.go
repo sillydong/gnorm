@@ -5,7 +5,7 @@ package tables
 import (
 	"database/sql"
 
-	"gnorm.org/gnorm/database/drivers/postgres/gnorm"
+	"github.com/sillydong/gnorm/database/drivers/postgres/gnorm"
 )
 
 // Row represents a row from 'tables'.

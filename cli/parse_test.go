@@ -5,8 +5,8 @@ import (
 	"log"
 	"testing"
 
-	"gnorm.org/gnorm/environ"
-	"gnorm.org/gnorm/run/data"
+	"github.com/sillydong/gnorm/environ"
+	"github.com/sillydong/gnorm/run/data"
 
 	"github.com/BurntSushi/toml"
 	"github.com/google/go-cmp/cmp"
@@ -72,21 +72,21 @@ func TestParseConfig(t *testing.T) {
 		},
 		TypeMap: map[string]string{
 			"timestamp with time zone": "time.Time",
-			"text":              "string",
-			"boolean":           "bool",
-			"uuid":              "uuid.UUID",
-			"character varying": "string",
-			"integer":           "int",
-			"numeric":           "float64",
+			"text":                     "string",
+			"boolean":                  "bool",
+			"uuid":                     "uuid.UUID",
+			"character varying":        "string",
+			"integer":                  "int",
+			"numeric":                  "float64",
 		},
 		NullableTypeMap: map[string]string{
 			"timestamp with time zone": "pq.NullTime",
-			"text":              "sql.NullString",
-			"boolean":           "sql.NullBool",
-			"uuid":              "uuid.NullUUID",
-			"character varying": "sql.NullString",
-			"integer":           "sql.NullInt64",
-			"numeric":           "sql.NullFloat64",
+			"text":                     "sql.NullString",
+			"boolean":                  "sql.NullBool",
+			"uuid":                     "uuid.NullUUID",
+			"character varying":        "sql.NullString",
+			"integer":                  "sql.NullInt64",
+			"numeric":                  "sql.NullFloat64",
 		},
 		PluginDirs:       []string{"plugins"},
 		OutputDir:        "gnorm",

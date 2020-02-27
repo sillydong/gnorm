@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"gnorm.org/gnorm/environ"
+	"github.com/sillydong/gnorm/environ"
 )
 
 // Run captures the OS environment and passes it to ParseAndRun.  It returns

@@ -1,4 +1,4 @@
-package cli // import "gnorm.org/gnorm/cli"
+package cli
 
 import (
 	"io"
@@ -11,12 +11,12 @@ import (
 	"github.com/BurntSushi/toml"
 	"github.com/pkg/errors"
 
-	"gnorm.org/gnorm/database"
-	"gnorm.org/gnorm/database/drivers/mysql"
-	"gnorm.org/gnorm/database/drivers/postgres"
-	"gnorm.org/gnorm/environ"
-	"gnorm.org/gnorm/run"
-	"gnorm.org/gnorm/run/data"
+	"github.com/sillydong/gnorm/database"
+	"github.com/sillydong/gnorm/database/drivers/mysql"
+	"github.com/sillydong/gnorm/database/drivers/postgres"
+	"github.com/sillydong/gnorm/environ"
+	"github.com/sillydong/gnorm/run"
+	"github.com/sillydong/gnorm/run/data"
 )
 
 func parseFile(env environ.Values, file string) (*run.Config, error) {

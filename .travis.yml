@@ -1,7 +1,7 @@
 language: go
 
 # vanity url support
-go_import_path: gnorm.org/gnorm
+go_import_path: github.com/sillydong/gnorm
 
 # prevent double test runs for PRs
 branches:

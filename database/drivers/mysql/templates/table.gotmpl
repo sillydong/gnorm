@@ -2,7 +2,7 @@
 {{with .Table}}
 package {{toLower .Name}}
 
-import "gnorm.org/gnorm/database/drivers/mysql/gnorm"
+import "github.com/sillydong/gnorm/database/drivers/mysql/gnorm"
 
 {{$table := .DBName -}}
 {{$schema := .Schema.DBName -}}

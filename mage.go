@@ -31,7 +31,7 @@ func Build() error {
 
 	log.Print("running go install")
 	// use -tags make so we can have different behavior for when we know we've built with mage.
-	return run("go", "install", "-tags", "make", "--ldflags="+ldf, "gnorm.org/gnorm")
+	return run("go", "install", "-tags", "make", "--ldflags="+ldf, "github.com/sillydong/gnorm")
 }
 
 // Runs go generate.

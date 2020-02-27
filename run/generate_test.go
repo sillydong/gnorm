@@ -14,7 +14,7 @@ import (
 	"testing"
 	"text/template"
 
-	"gnorm.org/gnorm/environ"
+	"github.com/sillydong/gnorm/environ"
 )
 
 func TestMain(m *testing.M) {

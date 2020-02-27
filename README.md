@@ -34,7 +34,7 @@ operating system.  See our [latest release](https://github.com/gnormal/gnorm/rel
 __Note:__ Gnorm uses a go vanity url.  To install with go get, run 
 
 ```
-go get gnorm.org/gnorm
+go get github.com/sillydong/gnorm
 ```
 
 However, using go get to install will mean that `gnorm version` doesn't report
@@ -50,7 +50,7 @@ $ mage build
 ```
 
 If you want to git clone instead (which should work fine since we vendor all
-dependencies), make sure you git clone into `$GOPATH/src/gnorm.org/gnorm`.
+dependencies), make sure you git clone into `$GOPATH/src/github.com/sillydong/gnorm`.
 
 ## Discussion 
 

@@ -18,7 +18,7 @@ The easiest way is to download the latest
 and all major platforms are supported.
 
 If you have a Go programming environment set up, you can `go get
-gnorm.org/gnorm`. Note that if you install this way, `gnorm version` will not
+github.com/sillydong/gnorm`. Note that if you install this way, `gnorm version` will not
 output any build info.  If you'd like the build info to be correct, run `mage build`,
 which will compile the binary with the current git information.
 

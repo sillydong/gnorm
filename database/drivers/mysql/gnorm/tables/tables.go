@@ -6,7 +6,7 @@ import (
 	"database/sql"
 
 	"github.com/go-sql-driver/mysql"
-	"gnorm.org/gnorm/database/drivers/mysql/gnorm"
+	"github.com/sillydong/gnorm/database/drivers/mysql/gnorm"
 )
 
 // Row represents a row from 'TABLES'.

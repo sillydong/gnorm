@@ -1,4 +1,4 @@
-package mysql // import "gnorm.org/gnorm/database/drivers/mysql"
+package mysql
 
 import (
 	"database/sql"
@@ -10,10 +10,10 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/pkg/errors"
 
-	"gnorm.org/gnorm/database"
-	"gnorm.org/gnorm/database/drivers/mysql/gnorm/columns"
-	"gnorm.org/gnorm/database/drivers/mysql/gnorm/statistics"
-	"gnorm.org/gnorm/database/drivers/mysql/gnorm/tables"
+	"github.com/sillydong/gnorm/database"
+	"github.com/sillydong/gnorm/database/drivers/mysql/gnorm/columns"
+	"github.com/sillydong/gnorm/database/drivers/mysql/gnorm/statistics"
+	"github.com/sillydong/gnorm/database/drivers/mysql/gnorm/tables"
 )
 
 //go:generate gnorm gen

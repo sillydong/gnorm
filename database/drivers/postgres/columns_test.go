@@ -5,7 +5,7 @@ import (
 	"log"
 	"testing"
 
-	"gnorm.org/gnorm/database/drivers/postgres/gnorm/columns"
+	"github.com/sillydong/gnorm/database/drivers/postgres/gnorm/columns"
 )
 
 // These values are actual values created by reading postgres 9.6.3.

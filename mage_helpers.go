@@ -23,7 +23,7 @@ func flags() (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return fmt.Sprintf(`-X "gnorm.org/gnorm/cli.timestamp=%s" -X "gnorm.org/gnorm/cli.commitHash=%s" -X "gnorm.org/gnorm/cli.version=%s"`, timestamp, hash, version), nil
+	return fmt.Sprintf(`-X "github.com/sillydong/gnorm/cli.timestamp=%s" -X "github.com/sillydong/gnorm/cli.commitHash=%s" -X "github.com/sillydong/gnorm/cli.version=%s"`, timestamp, hash, version), nil
 }
 
 func gitTag() (string, error) {

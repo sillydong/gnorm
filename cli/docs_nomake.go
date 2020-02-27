@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"gnorm.org/gnorm/environ"
+	"github.com/sillydong/gnorm/environ"
 )
 
 func showDocs(env environ.Values, cmd *cobra.Command, args []string) error {

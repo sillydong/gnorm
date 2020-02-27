@@ -1,4 +1,4 @@
-package run // import "gnorm.org/gnorm/run"
+package run
 
 import (
 	"bytes"
@@ -16,8 +16,8 @@ import (
 
 	"github.com/pkg/errors"
 
-	"gnorm.org/gnorm/environ"
-	"gnorm.org/gnorm/run/data"
+	"github.com/sillydong/gnorm/environ"
+	"github.com/sillydong/gnorm/run/data"
 )
 
 // Generate reads your database, gets the schema for it, and then generates

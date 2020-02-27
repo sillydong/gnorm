@@ -6,9 +6,9 @@ import (
 	"testing"
 	"text/template"
 
-	"gnorm.org/gnorm/database"
-	"gnorm.org/gnorm/environ"
-	"gnorm.org/gnorm/run/data"
+	"github.com/sillydong/gnorm/database"
+	"github.com/sillydong/gnorm/environ"
+	"github.com/sillydong/gnorm/run/data"
 )
 
 func TestMakeData(t *testing.T) {

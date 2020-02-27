@@ -3,8 +3,8 @@ package run
 import (
 	"text/template"
 
-	"gnorm.org/gnorm/database"
-	"gnorm.org/gnorm/run/data"
+	"github.com/sillydong/gnorm/database"
+	"github.com/sillydong/gnorm/run/data"
 )
 
 // Config holds the schema that is expected to exist in the gnorm.toml file.

@@ -11,7 +11,7 @@ package main
 import (
     "fmt"
     "os"
-    "gnorm.org/gnorm/cli"
+    "github.com/sillydong/gnorm/cli"
 )
 func main() {
     fmt.Println("```plain")

@@ -1,4 +1,4 @@
-package gnorm // import "gnorm.org/gnorm/database/drivers/mysql/gnorm"
+package gnorm
 
 // Note that this file is *NOT* generated. :)
 

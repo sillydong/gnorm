@@ -26,7 +26,7 @@ If you add a dependency to the binary, make sure to update the vendor directory 
 
 ## Setting up development environment
 
-Imports points to `gnorm.org/gnorm` instead of `github.com/gnormal/gnorm` so a safer way to set this up is to follow these simple steps.
+Imports points to `github.com/sillydong/gnorm` instead of `github.com/gnormal/gnorm` so a safer way to set this up is to follow these simple steps.
 
 ```shell
 mkdir $GOPATH/src/gnorm.org

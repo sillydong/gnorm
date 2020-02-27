@@ -5,7 +5,7 @@ package columns
 import (
 	"database/sql"
 
-	"gnorm.org/gnorm/database/drivers/mysql/gnorm"
+	"github.com/sillydong/gnorm/database/drivers/mysql/gnorm"
 )
 
 // Row represents a row from 'COLUMNS'.

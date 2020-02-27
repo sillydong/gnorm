@@ -24,7 +24,7 @@ var (
 )
 
 func main() {
-	c := exec.Command("go", "doc", "-u", "gnorm.org/gnorm/environ.FuncMap")
+	c := exec.Command("go", "doc", "-u", "github.com/sillydong/gnorm/environ.FuncMap")
 	b, err := c.CombinedOutput()
 	if err != nil {
 		fmt.Println(err)
@@ -64,7 +64,7 @@ func main() {
 
 	for _, s := range locals {
 		fmt.Println("##", s)
-		c := exec.Command("go", "doc", "-u", "gnorm.org/gnorm/environ."+s)
+		c := exec.Command("go", "doc", "-u", "github.com/sillydong/gnorm/environ."+s)
 		b, err := c.CombinedOutput()
 		if err != nil {
 			fmt.Println(err)

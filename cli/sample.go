@@ -196,4 +196,5 @@ mySpecialValue = "some value"
 
     # If true, the standard output of the tool will be written to the target file.
     # UseStdout = false`
+
 // [[[end]]]

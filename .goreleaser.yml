@@ -7,7 +7,7 @@ release:
 build:
   binary: gnorm
   main: .
-  ldflags: -s -w -X gnorm.org/gnorm/cli.timestamp={{.Date}} -X gnorm.org/gnorm/cli.commitHash={{.Commit}} -X gnorm.org/gnorm/cli.version={{.Version}}
+  ldflags: -s -w -X github.com/sillydong/gnorm/cli.timestamp={{.Date}} -X github.com/sillydong/gnorm/cli.commitHash={{.Commit}} -X github.com/sillydong/gnorm/cli.version={{.Version}}
   goos:
     - darwin
     - linux
