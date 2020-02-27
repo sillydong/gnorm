@@ -42,6 +42,7 @@ var FuncMap = map[string]interface{}{
 	"numbers":      numbers,
 	"steps":        steps,
 	"pascal":       kace.Pascal,
+	"pascalLow":    pascalLow,
 	"plural":       inflection.Plural,
 	"repeat":       strings.Repeat,
 	"replace":      strings.Replace,
@@ -247,4 +248,8 @@ func execJSON(runner cmdRunner, name string, data []byte, args ...string) (map[s
 
 func camelLow(src string) string {
 	return strings.Replace(kace.Camel(src), "ID", "Id", -1)
+}
+
+func pascalLow(src string) string {
+	return strings.Replace(kace.Pascal(src), "ID", "Id", -1)
 }
