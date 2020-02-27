@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os/exec"
 	"path/filepath"
+	"reflect"
 	"strconv"
 	"strings"
 
@@ -19,7 +20,6 @@ import (
 // methods here, please keep them alphabetical.
 var FuncMap = map[string]interface{}{
 	"camel":        kace.Camel,
-	"camelLow":     camelLow,
 	"compare":      strings.Compare,
 	"contains":     strings.Contains,
 	"containsAny":  strings.ContainsAny,
@@ -42,7 +42,6 @@ var FuncMap = map[string]interface{}{
 	"numbers":      numbers,
 	"steps":        steps,
 	"pascal":       kace.Pascal,
-	"pascalLow":    pascalLow,
 	"plural":       inflection.Plural,
 	"repeat":       strings.Repeat,
 	"replace":      strings.Replace,
@@ -66,6 +65,7 @@ var FuncMap = map[string]interface{}{
 	"trimRight":    strings.TrimRight,
 	"trimSpace":    strings.TrimSpace,
 	"trimSuffix":   strings.TrimSuffix,
+	"specialId":    specialId,
 }
 
 // sliceString returns a slice of s from index start to end.
@@ -246,10 +246,36 @@ func execJSON(runner cmdRunner, name string, data []byte, args ...string) (map[s
 	return o, nil
 }
 
-func camelLow(src string) string {
-	return strings.Replace(kace.Camel(src), "ID", "Id", -1)
+func specialId(src string) string {
+	return strings.ReplaceAll(src, "ID", "Id")
 }
 
-func pascalLow(src string) string {
-	return strings.Replace(kace.Pascal(src), "ID", "Id", -1)
+func Walk(src data.Strings, f string) data.Strings {
+	fu, exists := FuncMap[f]
+	if !exists {
+		return src
+	}
+	ret := make(data.Strings, 0, len(src))
+	for _, x := range src {
+		res, err := call(reflect.ValueOf(fu), x)
+		if err != nil {
+			return src
+		}
+		ret = append(ret, res[0].String())
+	}
+	return ret
+}
+
+func call(f reflect.Value, params ...interface{}) (result []reflect.Value, err error) {
+	if len(params) != f.Type().NumIn() {
+		err = errors.New("The number of params is not adapted.")
+		return
+	}
+
+	in := make([]reflect.Value, len(params))
+	for k, param := range params {
+		in[k] = reflect.ValueOf(param)
+	}
+	result = f.Call(in)
+	return
 }

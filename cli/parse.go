@@ -88,6 +88,7 @@ func Parse(env environ.Values, r io.Reader) (*run.Config, error) {
 	cfg.Driver = d
 
 	environ.FuncMap["plugin"] = environ.Plugin(c.PluginDirs)
+	environ.FuncMap["walk"] = environ.Walk
 
 	t, err := template.New("NameConversion").Funcs(environ.FuncMap).Parse(c.NameConversion)
 	if err != nil {
